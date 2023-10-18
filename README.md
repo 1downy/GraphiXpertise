@@ -24,5 +24,9 @@ To run **GraphiXpertise** on your local machine, follow these steps:
    ```bash
    git clone https://github.com/E4crypt3d/GraphiXpertise.git
    cd GraphiXpertise
+   python -m venv venv
+   source venv/bin/activate   # On Windows, use 'venv\Scripts\activate'
+   pip install -r requirements.txt
+   python manage.py runserver
 
 ```
