@@ -25,7 +25,8 @@ To run **GraphiXpertise** on your local machine, follow these steps:
    python -m venv venv
    source venv/bin/activate   # On Windows, use 'venv\Scripts\activate'
    pip install -r requirements.txt
-   python manage.py runserver```
+   python manage.py runserver
+```
 # GraphiXpertise
 
 The application will be available at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
