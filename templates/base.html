@@ -1,0 +1,112 @@
+{% load static %}
+
+<!doctype html>
+<html>
+
+<head>
+
+    <title>GraphiXpertise |{% block title %}{% endblock title %}
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Welcome to GraphiXpertise" />
+    <link rel="stylesheet" href="{% static './css/main.css' %}">
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'js/htmx.min.js' %}"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.default.min.css"
+        integrity="sha512-pTaEn+6gF1IeWv3W1+7X7eM60TFu/agjgoHmYhAfLEU8Phuf6JKiiE8YmsNC0aCgQv4192s4Vai8YZ6VNM6vyQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js"
+        integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="dark:bg-gray-900 dark:text-white">
+
+
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="{% url 'home' %}" class="flex items-center">
+                <img src="{% static 'img/logo.png' %}" class="w-36 mr-3 dark:brightness-200"
+                    alt="GraphiXpertise Logo" />
+            </a>
+            <div class="flex md:order-2">
+                <div id="light" class="mr-2 mb-1 dark:hidden">
+                    <img class="mb-2" src="{% static 'img/sun.png' %}" width="30" alt="Light">
+                </div>
+                <label class="relative inline-flex items-center mb-4 cursor-pointer">
+                    <input type="checkbox" id="change-theme" onchange="handleTheme(this)" value="" class="sr-only peer">
+                    <div
+                        class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                    </div>
+                </label>
+                <div id="dark" class="ml-2 mb-1 hidden dark:block">
+                    <img class="mb-2" src="{% static 'img/moon.png' %}" width="30" alt="Dark">
+                </div>
+                <button data-collapse-toggle="navbar-cta" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-cta" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5 mb-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center mr-14 justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                <ul
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="/"
+                            class="block hover:text-blue-300 {% block homeactive %}{% endblock homeactive %} py-2 pl-3 pr-6 rounded md:bg-transparent md:p-0"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}"
+                            class="block hover:text-blue-300 {% block aboutactive %}{% endblock aboutactive %} py-2 pl-3 pr-6 rounded md:hover:bg-transparent md:p-0 md:dark:hover:bg-transparent">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-4">
+        {% block content %}{% endblock content %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script>
+        var theme = localStorage.getItem('theme');
+        if (theme !== null) {
+
+
+            if (theme === 'light') {
+                document.getElementById("change-theme").checked = false;
+                localStorage.setItem('theme', 'light');
+                document.documentElement.classList.remove('dark');
+            } else {
+                document.getElementById('change-theme').checked = true;
+                localStorage.setItem('theme', 'dark');
+                document.documentElement.classList.add('dark');
+            }
+        }
+
+        var handleTheme = (e) => {
+            const checkTheme = localStorage.getItem('theme');
+            if (checkTheme === 'dark') {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,522 @@
+<hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+<h1 class="mb-10 text-lg text-center font-bold leading-none tracking-tight text-gray-900 dark:text-white">
+
+    <span class="text-transparent uppercase bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-300">GPU Comparison
+        Summary</span>
+</h1>
+<p class="mb-6 text-base text-center font-normal text-gray-600 lg:text-md sm:px-16 xl:px-48 dark:text-gray-500">
+    <span class="block text-gray-600 dark:text-gray-400">{{compare.rating}}</span>
+    Evaluate the differences and similarities between <span class="font-bold">{{gpu1}}</span> and <span
+        class="font-bold">{{gpu1}}</span> to make an informed decision based on key specifications and performance
+    benchmarks. Get a quick overview of the two GPUs to help you choose the right
+    one for your needs.
+<p class="mb-6 text-sm text-center font-normal lg:text-md sm:px-16 xl:px-48 text-gray-600 dark:text-gray-500">
+    <span class="text-red-500 font-bold">Note:</span> The comparison results provided here are intended for
+    informational purposes and are not indicative of real-world performance. Actual GPU performance may vary based on
+    factors such as system configuration, software optimizations, and usage scenarios. It is recommended to consider
+    individual reviews, benchmarks, and specific use cases when making a decision about GPU selection
+</p>
+</p>
+<div class="relative overflow-x-auto">
+    <table class="w-full text-center text-base text-gray-500 dark:text-gray-400">
+        <colgroup>
+            <col class="w-[20%]">
+            <col class="w-[40%]">
+            <col class="w-[40%]">
+        </colgroup>
+        <thead class="text-base font-bold text-gray-900 text-center uppercase dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Specs
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    {{gpu1}}
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    {{gpu2}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    GPU Name
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.name}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.name}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    GPU Variant
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.variant}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.variant}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Architecture
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.architecture}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.architecture}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Foundry
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.foundry}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.foundry}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Process Size
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.process_size}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.process_size}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Transistors
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.transistors}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.transistors}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Density
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.density}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.density}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Die Size
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.die_size}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.die_size}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Chip Package
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.chip_package}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.chip_package}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Release Date
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.release_date}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.release_date}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Generation
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.generation}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.generation}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Production
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.production}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.production}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Launch Price
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.launch_price}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.launch_price}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Bus Interface
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.bus_interface}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.bus_interface}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    GPU Clock
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.gpu_clock}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.gpu_clock}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Boost Clock
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.boost_clock}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.boost_clock}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Memory Clock
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.memory_clock}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.memory_clock}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Memory Size
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.memory_size}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.memory_size}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Memory Type
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.memory_type}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.memory_type}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Memory Bus
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.memory_bus}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.memory_bus}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Bandwidth
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.bandwidth}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.bandwidth}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Shading Units
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.shading_units}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.shading_units}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    TMUS
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.tmus}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.tmus}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    ROPS
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.rops}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.rops}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    L1 Cache
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.l1_cache}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.l1_cache}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    L2 Cache
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.l2_cache}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.l2_cache}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Pixel Rate
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.pixel_rate}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.pixel_rate}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Texture Rate
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.texture_rate}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.texture_rate}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    FP32 Performance
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.fp32_performance}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.fp32_performance}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    FP64 Performance
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.fp64_performance}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.fp64_performance}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Slot Width
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.slot_width}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.slot_width}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Length
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.length}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.length}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    TDP
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.tdp}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.tdp}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Suggested PSU
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.suggested_psu}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.suggested_psu}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Outputs
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.outputs}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.outputs}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Power Connectors
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.power_connectors}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.power_connectors}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Board Number
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.board_number}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.board_number}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Directx
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.directx}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.directx}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    OpenGL
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.opengl}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.opengl}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    OpenCL
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.opencl}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.opencl}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Vulkan
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.vulkan}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.vulkan}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Shader Model
+                </th>
+                <td class="px-6 py-4">
+                    {{gpu1.gpu_specs.shader_model}}
+                </td>
+                <td class="px-6 py-4">
+                    {{gpu2.gpu_specs.shader_model}}
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800 my-1">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Overall Rating
+                </th>
+                <td class="px-6 py-4">
+                    <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+                        <div class="bg-blue-700 text-xs font-medium text-blue-100 text-center p-0.5 leading-none
+                            rounded-full" style="width: {{compare.gpu1_percent}}%"> {{compare.gpu1_percent}}%</div>
+                    </div>
+                </td>
+                <td class="px-6 py-4">
+                    <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+                        <div class="bg-blue-700 text-xs font-medium text-blue-100 text-center p-0.5 leading-none
+                            rounded-full" style="width: {{compare.gpu2_percent}}%"> {{compare.gpu2_percent}}%</div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

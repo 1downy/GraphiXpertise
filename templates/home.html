@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block homeactive %}
+navactive
+{% endblock homeactive %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+
+
+{% block content %}
+<div>
+    <h1
+        class="mb-10 text-4xl md:text-4xl sm:text-3xl text-center font-bold leading-none tracking-tight text-gray-900 dark:text-white">
+
+        <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-300">GraphiXpertise</span>
+    </h1>
+    <p class="mb-6 text-sm text-center font-normal text-gray-500 lg:text-md sm:px-16 xl:px-48 dark:text-gray-400">
+        "GraphiXpertise: Elevating GPU Comparison with Precision — Unleash the Full Spectrum of Graphics Performance
+        with Gaming and Raw Performance Analysis Modes"</p>
+
+
+    <!-- comparsion form -->
+    <form hx-boost="true" hx-target="#comparsion" hx-post="{% url 'compare' %}" method="post">
+        {% csrf_token %}
+        <div class="flex flex-col justify-center mt-6">
+            <div class="flex flex-row">
+                <div class="flex w-[47%]">
+                    <select id="gpu1" name="gpu1"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:border-l-gray-700 border-l-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="">Choose a GPU</option>
+                    </select>
+                </div>
+                <div class="mx-4 w-[6%]">
+                    <h3 class="font-mono text-center text-xl font-bold">VS</h3>
+                </div>
+                <div class="flex w-[47%]">
+                    <select id="gpu2" name="gpu2"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:border-l-gray-700 border-l-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="">Choose a GPU</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- SWITCHER -->
+            <div class="mx-auto my-10">
+                <div class="flex flex-col">
+                    <div class="flex-col flex justify-center">
+                        <p
+                            class="mb-6 sm:text-sm text-center text-base font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                            Compare GPU Performance:
+                            <span id="comparetext"
+                                class="mb-6 text-lg font-normal text-gray-600 dark:text-gray-300">Gaming
+                                Performance</span>
+                        </p>
+                        <p class="mb-10 block md:text-sm text-center text-gray-500 dark:text-gray-[450]">
+                            Switch between 'Gaming Performance' and 'Raw Performance' modes to compare GPU capabilities.
+                            The
+                            default mode is 'Gaming Performance'.
+                        </p>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <label class="relative inline-flex items-center mb-4 cursor-pointer">
+                            <input onchange="handleCompareMode(this)" type="checkbox" name="comparemode"
+                                id="comparemode" value="gaming" class="sr-only peer">
+                            <div
+                                class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                            </div>
+
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- compare button -->
+            <div class="mx-auto mt-1">
+                <button hx-indicator="#spinner" type="submit" class="text-gray-300 dark:text-white
+                       bg-gray-700 hover:bg-gray-900 dark:bg-gray-800 dark:hover:bg-gray-700
+                       focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700
+                       font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 uppercase lg:w-60">
+                    <img id="spinner" class="htmx-indicator animate-spin inline" width="15%"
+                        src="{% static 'img/loading.png' %}" />
+                    Compare
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="mx-auto my-12" id="comparsion">
+</div>
+</div>
+<script>
+    const handleCompareMode = (e) => {
+        let compareText = document.getElementById('comparetext');
+        if (e.checked) {
+            document.getElementById('comparetext').innerText = "Raw Performance";
+            document.getElementById('comparemode').value = "raw";
+        } else {
+            document.getElementById('comparemode').value = "gaming";
+            document.getElementById('comparetext').innerText = "Gaming Performance";
+        }
+    }
+
+
+
+    let gpuList = {{ gpulist | safe }};
+    $(function () {
+        $("#gpu1").selectize({
+            options: gpuList,
+            onChange: function (value) {
+                // Remove the selected option from #gpu2
+                $("#gpu2")[0].selectize.removeOption(value);
+            }
+        });
+
+        // Initialize Selectize for the second select element
+        $("#gpu2").selectize({
+            options: gpuList,
+            onChange: function (value) {
+                // Remove the selected option from #gpu1
+                $("#gpu1")[0].selectize.removeOption(value);
+            }
+        });
+    });
+</script>
+
+{% endblock content %}

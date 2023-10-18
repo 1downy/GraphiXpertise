@@ -1,0 +1,21 @@
+/* static/src/input.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.htmx-indicator {
+		display: none !important;
+	}
+	.htmx-request .htmx-indicator {
+		display: inline !important;
+	}
+	.htmx-request.htmx-indicator {
+		display: inline !important;
+	}
+
+	.navactive {
+		@apply text-blue-600 scale-110;
+	}
+}
