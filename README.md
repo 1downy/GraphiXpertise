@@ -23,4 +23,6 @@ To run **GraphiXpertise** on your local machine, follow these steps:
 
    ```bash
    git clone https://github.com/E4crypt3d/GraphiXpertise.git
+   cd GraphiXpertise
+
 ```
