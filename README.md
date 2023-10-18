@@ -2,10 +2,10 @@
 
 **GraphiXpertise** is a web application created by [E4CRYPT3D](https://github.com/E4crypt3d) using Django, HTMX, and Tailwind CSS. It allows users to compare two GPUs from a list in both gaming and raw performance modes.
 
-![Demo Screenshot 1](/demo/screenshot1.png)
-![Demo Screenshot 2](/demo/screenshot2.png)
-![Demo Screenshot 3](/demo/screenshot3.png)
-![Demo Screenshot 4](/demo/screenshot4.png)
+![Demo Screenshot 1](/demo/screenshot1.PNG)
+![Demo Screenshot 2](/demo/screenshot2.PNG)
+![Demo Screenshot 3](/demo/screenshot3.PNG)
+![Demo Screenshot 4](/demo/screenshot4.PNG)
 
 ## Features
 
@@ -19,15 +19,16 @@
 
 To run **GraphiXpertise** on your local machine, follow these steps:
 
-   ```bash
-   git clone https://github.com/E4crypt3d/GraphiXpertise.git
-   cd GraphiXpertise
-   python -m venv venv
-   source venv/bin/activate   # On Windows, use 'venv\Scripts\activate'
-   pip install -r requirements.txt
-   python manage.py runserver
+```bash
+git clone https://github.com/E4crypt3d/GraphiXpertise.git
+cd GraphiXpertise
+python -m venv venv
+source venv/bin/activate   # On Windows, use 'venv\Scripts\activate'
+pip install -r requirements.txt
+python manage.py runserver
 
-   ```
+```
+
 The application will be available at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
 ## Usage
