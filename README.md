@@ -42,8 +42,4 @@ The application will be available at [http://127.0.0.1:8000/](http://127.0.0.1:8
 
 If you'd like to contribute to this project, please open an issue or create a pull request. We welcome your contributions!
 
-## License
-
-This project is licensed under the MIT License.
-
 Enjoy comparing GPUs with GraphiXpertise! If you have any questions or suggestions, please don't hesitate to contact the developer.
