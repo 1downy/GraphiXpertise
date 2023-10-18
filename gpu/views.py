@@ -128,6 +128,6 @@ def compare(request):
                     context[gpu_num+str(num)] = g
                     num += 1
 
-            a = compare_gpus(gpu1, gpu2, compare_mode)
-            context['compare'] = a
+            compared_gpu = compare_gpus(gpu1, gpu2, compare_mode)
+            context['compare'] = compared_gpu
             return render(request, 'partials/comparsion.html', context)
